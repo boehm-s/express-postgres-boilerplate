@@ -12,7 +12,7 @@
 	"no-redeclare": "error",
 	"no-useless-return": "error",
 	"vars-on-top": "warn",
-	"yoda": "warn",
+	"yoda": ["warn", "always"],
 	"no-unused-vars": "warn",
 	"no-undefined": "error",
 	"no-use-before-define": "error",

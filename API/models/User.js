@@ -8,7 +8,7 @@ module.exports = Bookshelf.Model.extend({
         this.set(body);
         return await this.save();
     },
-    light: function() {
+    light() {
         return _.pick(this.toJSON(), ["firstname"]);
     }
 }, {
@@ -18,7 +18,7 @@ module.exports = Bookshelf.Model.extend({
         return user;
     },
 
-    async get(id) {
+    async getById(id) {
         return await this.query({where: {id}}).fetch();
     },
 
