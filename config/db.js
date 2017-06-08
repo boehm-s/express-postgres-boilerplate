@@ -3,9 +3,9 @@ const conf  = {
         client: 'postgresql',
         connection: {
             host:'127.0.0.1',
-            database: 'seedup',
-            user:     'seedup',
-            password: 'seedup'
+            database: process.env.DB_NAME || 'seedup',
+            user:     process.env.DB_USER || 'seedup',
+            password: 'pass'
         },
         pool: {
             min: 2,
@@ -19,9 +19,9 @@ const conf  = {
         client: 'postgresql',
         connection: {
             host:'127.0.0.1',
-            database: 'seedup',
-            user:     'postgresql',
-            password: ''
+            database: process.env.DB_NAME || 'seedup',
+            user:     process.env.DB_USER || 'postgresql',
+            password: 'pass'
         },
         pool: {
             min: 2,
