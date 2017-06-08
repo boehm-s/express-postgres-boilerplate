@@ -4,8 +4,7 @@ module.exports = Bookshelf.Model.extend({
     tableName: 'users',
     hidden: ['password'],
     update: async function(body) {
-        const realbody = _.pick(body, ['firstname', 'lastname', 'email', 'birthDate', 'gender', 'phoneNumber', 'phonePrefixNumber', 'password', 'weight', 'height', 'shape', 'handicap', 'pushNotificationToken', 'photoUrl']);
-        this.set(realbody);
+        this.set(body);
         await this.save();
         return;
     },
@@ -14,12 +13,15 @@ module.exports = Bookshelf.Model.extend({
     }
 }, {
     create: async function(body) {
-        const realbody = _.pick(body, ['firstname', 'lastname', 'email', 'birthDate', 'gender', 'phoneNumber', 'phonePrefixNumber', 'password', 'parentCode', 'photoUrl']);
-        realbody.password = await bcrypt.hash(realbody.password, 10);
-        const user = await (await new this(realbody).save()).fetch();
+        const user = await (await new this(body).save()).fetch();
         return user;
     },
-    get: async function(id) {
+
+    getById: async function(id) {
         return await this.query({where: {id}}).fetch();
     },
+
+    getAll: async function() {
+	return await this.query({}).fetchAll();
+    }
 });

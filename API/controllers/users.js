@@ -20,24 +20,4 @@ const getAll = async (req, res, next) => {
     res.json(allUsers);
 };
 
-const getBy = async (req, res, next) => {
-    req.body.filter = { id: req.params.id };
-    let users = await usersModel.getBy(req.body.filter);
-    return res.json(users);
-};
-
-const updateBy = async (req, res, next) => {
-    req.body.filter = { id: req.params.id };
-    let updatedUsers = await usersModel.update(req.body.filter, req.body.update);
-    return (updatedUsers.err)
-	? console.error(updatedUsers.err)
-	: res.json(updatedUsers);
-};
-
-const deleteBy = async (req, res, next) => {
-    req.body.filter = { id: req.params.id };
-    let deletedUsers = await usersModel.deleteBy(req.body.filter);
-    return res.json(deletedUsers);
-};
-
-export default {create, getAll, getBy, updateBy, deleteBy};
+export default {create, getAll};
