@@ -11,6 +11,7 @@
   "scripts": {
     "start": "babel-node app.js",
     "dev": "node_modules/.bin/nodemon node_modules/.bin/babel-node app.js",
+    "lint": "node_modules/.bin/eslint \"API/**\"",
     "//": "build   babel -d ./build/config ./config && babel -d ./build/API ./API && babel -d ./build ./app.js"
   },
   "dependencies": {
@@ -21,6 +22,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "dotenv": "^4.0.0",
+    "eslint-plugin-async-await": "0.0.0",
     "express": "~4.13.4",
     "jsonwebtoken": "^7.3.0",
     "knex": "^0.13.0",
@@ -33,6 +35,9 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-stage-2": "^6.24.1",
-    "pm2": "^2.0.15"
+    "eslint": "^3.19.0",
+    "node-pre-gyp": "^0.6.36",
+    "pm2": "^2.0.15",
+    "webpack": "^2.6.1"
   }
 }
