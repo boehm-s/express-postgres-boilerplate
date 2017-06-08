@@ -5,7 +5,7 @@ const conf  = {
             host:'127.0.0.1',
             database: process.env.DB_NAME || 'seedup',
             user:     process.env.DB_USER || 'seedup',
-            password: 'pass'
+            password: 'seedup'
         },
         pool: {
             min: 2,
@@ -21,7 +21,7 @@ const conf  = {
             host:'127.0.0.1',
             database: process.env.DB_NAME || 'seedup',
             user:     process.env.DB_USER || 'postgresql',
-            password: 'pass'
+            password: 'seedup'
         },
         pool: {
             min: 2,
@@ -35,5 +35,4 @@ const conf  = {
 
 const knex = require('knex')(conf[process.env.NODE_ENV || "development"]);
 const bookshelf = require('bookshelf')(knex);
-console.log("HERE");
 module.exports = bookshelf;
