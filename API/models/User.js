@@ -4,25 +4,25 @@ const _ = require('lodash');
 module.exports = Bookshelf.Model.extend({
     tableName: 'users',
     hidden: ['password'],
-    update: async function(body) {
+    async update(body) {
         this.set(body);
-        await this.save();
-        return;
+        return await this.save();
     },
     light: function() {
         return _.pick(this.toJSON(), ["firstname"]);
     }
 }, {
-    create: async function(body) {
+    async create(body) {
         const user = await (await new this(body).save()).fetch();
+
         return user;
     },
 
-    get: async function(id) {
+    async get(id) {
         return await this.query({where: {id}}).fetch();
     },
 
-    getAll: async function() {
+    async getAll() {
 	return await this.query({}).fetchAll();
     }
 });

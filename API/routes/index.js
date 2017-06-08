@@ -5,7 +5,7 @@ import userRoutes 	from './user';
 const router = express.Router();
 
 router.get('/health-check/:id', async (req, res) => {
-      res.send('OK')
+  res.send('OK')
 });
 
 router.use('/example', exampleRoutes);
