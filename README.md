@@ -1,5 +1,3 @@
-# MEAN Project
-
 ## Architecture
 
 ### app.js
@@ -57,3 +55,35 @@ will return the current user : `userModel.getCurrentUser(token)`.
 ### Illustration
 
 ![](/.img/archiAPI.png)
+
+
+
+### Getting started
+
+``` shell
+
+sudo -u postgres psql
+sudo apt-get install postgresql
+```
+
+``` sql
+
+CREATE USER xxx WITH PASSWORD 'xxx';
+CREATE DATABASE xxx;
+GRANT ALL PRIVILEGES ON DATABASE xxx to xxx;
+
+CREATE TABLE users(
+   firstname VARCHAR,
+   lastname VARCHAR,
+   email VARCHAR,
+   PRIMARY KEY( email )
+);
+```
+
+
+### Knex.js
+
+##### Create a migration
+```
+   knex migrate:make xxx
+```
