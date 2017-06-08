@@ -38,3 +38,7 @@ jspm_packages
 
 # tern
 .tern-port
+
+
+npm-debug.log
+package-lock.json
