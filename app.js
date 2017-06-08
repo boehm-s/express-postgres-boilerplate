@@ -3,9 +3,8 @@ import dbConf		from  './config/db';
 import app		from  './config/app';
 import apiRoutes	from  './API/routes/index';
 
-const port	= 3000 || process.env.port;
+const port	= process.env.port || 3000;
 const server	= createServer(app, port);
-
 
 // mount routes
 app.use('/api', apiRoutes);
