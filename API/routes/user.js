@@ -1,15 +1,12 @@
-import express		from 'express';
-import usersCtrl	from './../controllers/users';
-import accessControl	from './../controllers/access';
+import express from 'express';
+import userController from './../controllers/user';
 
 const router = express.Router();
 
+router.route('/')
+  .post(userController.create);
+
 router.route('/:id')
-    .get(accessControl.authorize(['admin', 'self']),
-	 usersCtrl.getBy)
-    .put(accessControl.authorize(['admin', 'self']),
-	 usersCtrl.updateBy)
-    .delete(accessControl.authorize(['admin', 'self']),
-	    usersCtrl.deleteBy);
+  .get(userController.getById);
 
 export default router;
