@@ -79,3 +79,11 @@ CREATE TABLE users(
    PRIMARY KEY( email )
 );
 ```
+
+
+### Knex.js
+
+##### Create a migration
+```
+   knex migrate:make xxx
+```
