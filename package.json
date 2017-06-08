@@ -36,6 +36,8 @@
     "babel-loader": "^7.0.0",
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^3.19.0",
+    "eslint-plugin-no-loops": "^0.3.0",
+    "eslint-plugin-unicorn": "^2.1.1",
     "node-pre-gyp": "^0.6.36",
     "pm2": "^2.0.15",
     "webpack": "^2.6.1"

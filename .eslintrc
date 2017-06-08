@@ -3,7 +3,7 @@
         "ecmaVersion": 2017,
         "sourceType": "module",
     },
-    "plugins": ["async-await"],
+    "plugins": ["async-await", "unicorn", "no-loops"],
     "rules": {
         "semi": ["warn", "always"],
 	"eqeqeq": "error",
@@ -42,6 +42,7 @@
 	"no-trailing-spaces": "error",
 	"rest-spread-spacing": ["error", "never"],
 	"prefer-rest-params": "error",
-	"object-shorthand": ["error", "always", { "avoidQuotes": true }]
+	"object-shorthand": ["error", "always", { "avoidQuotes": true }],
+	"no-loops/no-loops": "error"
     }
 }
