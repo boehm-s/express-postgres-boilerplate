@@ -11,7 +11,7 @@ const server	= createServer(app, port);
 app.use('/api', apiRoutes);
 
 (async function main() {
-    await dbConf.initDB();
+    // await dbConf.initDB();
     server.listen(port);
     console.log('server listening on port ' + port);
 })();

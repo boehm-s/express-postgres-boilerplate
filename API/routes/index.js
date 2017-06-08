@@ -4,8 +4,13 @@ import usersRoutes	from './users';
 import userRoutes	from './users';
 
 const router = express.Router();
-
-router.get('/health-check', (req, res) => {
+const Bookshelf = require('../../config/db');
+router.get('/health-check', async (req, res) => {
+    try {
+        console.log(await Bookshelf.knex.raw('select * from users'));
+    } catch (e) {
+        console.log(e);
+    }
     res.send('OK');
 });
 
