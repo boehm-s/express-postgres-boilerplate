@@ -26,6 +26,7 @@
     "knex": "^0.13.0",
     "morgan": "^1.7.0",
     "nodemon": "^1.11.0",
+    "objection": "^0.8.2",
     "pg": "^6.2.3"
   },
   "devDependencies": {

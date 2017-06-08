@@ -1,5 +1,6 @@
 const Bookshelf = require('../../config/db');
 const _ = require('lodash');
+
 module.exports = Bookshelf.Model.extend({
     tableName: 'users',
     hidden: ['password'],
@@ -9,7 +10,7 @@ module.exports = Bookshelf.Model.extend({
         return;
     },
     light: function() {
-        return _.pick(this.toJSON(), ["id","photoUrl","firstname","firstName","lastname","lastName","phoneNumber","handicap","rating","favoritePlace","currentActivity","sessions"]);
+        return _.pick(this.toJSON(), ["firstname"]);
     }
 }, {
     create: async function(body) {
@@ -17,7 +18,7 @@ module.exports = Bookshelf.Model.extend({
         return user;
     },
 
-    getById: async function(id) {
+    get: async function(id) {
         return await this.query({where: {id}}).fetch();
     },
 
