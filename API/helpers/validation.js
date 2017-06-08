@@ -1,4 +1,4 @@
-const body = fieldsObj =>  (req, res, next) => {
+const body = fieldsObj => (req, res, next) => {
     let allowed = fieldsObj.allowed || [];
     let required = fieldsObj.required || [];
 
@@ -6,7 +6,6 @@ const body = fieldsObj =>  (req, res, next) => {
 	req.body = (allowed.filter(el => required.includes(el)) !== required)
 	    ? req.body.pick(required.concat(allowed))
 	    : req.body.pick(allowed);
-
 	return next();
     } else {
 	let missingFields = Object.keys(req.body)

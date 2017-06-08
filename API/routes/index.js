@@ -1,15 +1,12 @@
 import express		from 'express';
 import exampleRoutes	from './example';
+import userRoutes 	from './user';
 
 const router = express.Router();
-const Bookshelf = require('../../config/db');
 
-router.get('/health-check', async (req, res) => {
-    const users = (await Bookshelf.knex.raw('select * from users')).rows;
-
-    res.send(users);
-});
+router.get('/health-check', (_, res) => res.send('OK'));
 
 router.use('/example', exampleRoutes);
+router.use('/user', userRoutes);
 
 export default router;

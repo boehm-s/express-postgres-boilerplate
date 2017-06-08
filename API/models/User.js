@@ -9,8 +9,7 @@ module.exports = Bookshelf.Model.extend({
         return await this.save();
     },
     light() {
-        return _.pick(this.toJSON(), ["id","photoUrl","firstname","firstName","lastname","lastName",
-				      "phoneNumber","handicap","rating","favoritePlace","currentActivity","sessions"]);
+        return _.pick(this.toJSON(), ["firstname"]);
     }
 }, {
     async create(body) {
